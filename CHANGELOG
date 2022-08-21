@@ -1,0 +1,7 @@
+forked from: https://github.com/PTZOptics/Open-Source-Control-Tool/commit/3acc2a4768cea0c8a9a11d4cc96aacc4003a3af2
+
+43d9f7c Remove:
+multiple copies of Camera 1
+Remove duplicate images
+
+f673194 Rename Camera 1 -> controls
