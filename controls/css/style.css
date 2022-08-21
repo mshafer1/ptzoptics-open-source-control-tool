@@ -5,6 +5,10 @@ body {
     height: 100%;
     overflow: hidden;
 }
+.call_preset > img {
+    width: 60px;
+    height: 60px;
+}
 #preloaded-images {
     position: absolute;
     overflow: hidden;
