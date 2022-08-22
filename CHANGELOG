@@ -1,7 +1,22 @@
 forked from: https://github.com/PTZOptics/Open-Source-Control-Tool/commit/3acc2a4768cea0c8a9a11d4cc96aacc4003a3af2
 
-43d9f7c Remove:
-multiple copies of Camera 1
-Remove duplicate images
+Initial changelog:
+43d9f7c remove extra cameras and duplicate images
+f673194 camera 1 -> controls
+4478e91 Add changelog
+77b3606 cleanup logo
+8489a35 remove empty row
+5bb6021 use prettier to fix indentation
+9f05da9 remove react script
+44d9c85 prett-format stylesheet
+5626b2f replace images
+f0300df fix image sizes in html
+a7872e4 Cleanup indentation and apply labels
+7485715 fix spelling
+5ee7ed5 remove home button
+4f65df2 format
+ee0bc8f fix dark mode pop ups...
+ce121ff add dots
+d28ac50 modal font color for dark mode
 
-f673194 Rename Camera 1 -> controls
+Full changelog can be seen here: https://github.com/mshafer1/ptzoptics-open-source-control-tool/compare/43d9f7c...main
