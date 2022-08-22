@@ -19,6 +19,7 @@ body {
 }
 .modal-dialog {
     margin-top: 60px;
+    color: #a0a0a0;
 }
 .modal-content {
     background-color: #333;
