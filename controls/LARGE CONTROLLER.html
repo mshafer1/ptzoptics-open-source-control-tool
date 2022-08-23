@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="./css/style.css" />
     </head>
 
-    <body>
+    <body style="overflow-y: scroll">
         <div class="main">
             <div class="row">
                 <div class="">
@@ -58,36 +58,42 @@
                     <form role="form" class="form-horizontal">
                         <fieldset class="presets">
                             <div class="row">
-                                <a
-                                    style="width: 112px; height: 90px"
-                                    class="call_preset preset_button preset-1"
-                                    data-preset="1"
-                                    href="#preset-1"
-                                >
-                                    <img src="images/presets/1.png" />
-                                    <br />
-                                    1. Lectern
-                                </a>
-                                <a
-                                    style="width: 112px; height: 90px"
-                                    class="call_preset preset_button preset-2"
-                                    data-preset="2"
-                                    href="#preset-2"
-                                >
-                                    <img src="images/presets/2.png" />
-                                    <br />
-                                    2. W-Lectern
-                                </a>
-                                <a
-                                    style="width: 112px; height: 90px"
-                                    class="call_preset preset_button preset-3"
-                                    data-preset="3"
-                                    href="#preset-3"
-                                >
-                                    <img src="images/presets/3.png" />
-                                    <br />
-                                    3. Table
-                                </a>
+                                <div class="col-sm">
+                                    <a
+                                        style="width: 112px; height: 90px"
+                                        class="call_preset preset_button preset-1"
+                                        data-preset="1"
+                                        href="#preset-1"
+                                    >
+                                        <img src="images/presets/1.png" />
+                                        <br />
+                                        1. Lectern
+                                    </a>
+                                </div>
+                                <div class="col-sm">
+                                    <a
+                                        style="width: 112px; height: 90px"
+                                        class="call_preset preset_button preset-2"
+                                        data-preset="2"
+                                        href="#preset-2"
+                                    >
+                                        <img src="images/presets/2.png" />
+                                        <br />
+                                        2. W-Lectern
+                                    </a>
+                                </div>
+                                <div class="col-sm">
+                                    <a
+                                        style="width: 112px; height: 90px"
+                                        class="call_preset preset_button preset-3"
+                                        data-preset="3"
+                                        href="#preset-3"
+                                    >
+                                        <img src="images/presets/3.png" />
+                                        <br />
+                                        3. Table
+                                    </a>
+                                </div>
                             </div>
                             <div class="row">
                                 <a
@@ -122,100 +128,109 @@
                                 </a>
                             </div>
                             <div class="row">
-                                <a href="#" class="autopan"> </a>
+                                <div class="col-sm" style="position: relative">
+                                    <a href="#" class="autopan"> </a>
+                                </div>
                             </div>
                         </fieldset>
 
                         <fieldset class="controls">
-                            <div class="zoom_controls">
-                                <div class="rocker">
-                                    <div class="row">
-                                        <a
-                                            class="toggle_button toggle-up toggle-zoom-in adjust_zoom"
-                                            data-action="zoomin"
-                                            href="#zoom"
-                                        >
-                                        </a>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="zoom_controls">
+                                        <div class="rocker">
+                                            <div class="row">
+                                                <a
+                                                    class="toggle_button toggle-up toggle-zoom-in adjust_zoom"
+                                                    data-action="zoomin"
+                                                    href="#zoom"
+                                                >
+                                                </a>
+                                            </div>
+                                            <div class="row">
+                                                <a
+                                                    class="toggle_button toggle-down toggle-zoom-out adjust_zoom"
+                                                    data-action="zoomout"
+                                                    href="#zoom"
+                                                >
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <a
-                                            class="toggle_button toggle-down toggle-zoom-out adjust_zoom"
-                                            data-action="zoomout"
-                                            href="#zoom"
-                                        >
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="focus_controls">
-                                <div class="rocker">
-                                    <div class="row">
-                                        <a
-                                            class="toggle_button toggle-up toggle-focus-in adjust_focus"
-                                            data-action="focusin"
-                                            href="#focus"
-                                        >
-                                        </a>
+                                    <div class="focus_controls">
+                                        <div class="rocker">
+                                            <div class="row">
+                                                <a
+                                                    class="toggle_button toggle-up toggle-focus-in adjust_focus"
+                                                    data-action="focusin"
+                                                    href="#focus"
+                                                >
+                                                </a>
+                                            </div>
+                                            <div class="row">
+                                                <a
+                                                    class="toggle_button toggle-down toggle-focus-out adjust_focus"
+                                                    data-action="focusout"
+                                                    href="#focus"
+                                                >
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <a
-                                            class="toggle_button toggle-down toggle-focus-out adjust_focus"
-                                            data-action="focusout"
-                                            href="#focus"
-                                        >
-                                        </a>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="pantilt_controls">
+                                        <div class="row">
+                                            <div
+                                                class="pantilt_image pantilt-blank-top-left"
+                                            ></div>
+                                            <a
+                                                id="pantilt-button-up"
+                                                class="pantilt-up pantilt_image adjust_pantilt"
+                                                href="#pantilt"
+                                                data-action="up"
+                                            >
+                                            </a>
+                                            <div
+                                                class="pantilt_image pantilt-blank-top-right"
+                                            ></div>
+                                        </div>
+                                        <div class="row">
+                                            <a
+                                                id="pantilt-button-left"
+                                                class="pantilt-left pantilt_image adjust_pantilt"
+                                                href="#pantilt"
+                                                data-action="left"
+                                            >
+                                            </a>
+                                            <span class="pantilt_image"
+                                                >&nbsp;</span
+                                            >
+                                            <a
+                                                id="pantilt-button-right"
+                                                class="pantilt-right pantilt_image adjust_pantilt"
+                                                href="#pantilt"
+                                                data-action="right"
+                                            >
+                                            </a>
+                                        </div>
+                                        <div class="row">
+                                            <div
+                                                class="pantilt_image pantilt-blank-bottom-left"
+                                            ></div>
+                                            <a
+                                                id="pantilt-button-down"
+                                                class="pantilt-down pantilt_image adjust_pantilt"
+                                                href="#pantilt"
+                                                data-action="down"
+                                            >
+                                            </a>
+                                            <div
+                                                class="pantilt_image pantilt-blank-bottom-right"
+                                            ></div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="pantilt_controls">
-                                <div class="row">
-                                    <div
-                                        class="pantilt_image pantilt-blank-top-left"
-                                    ></div>
-                                    <a
-                                        id="pantilt-button-up"
-                                        class="pantilt-up pantilt_image adjust_pantilt"
-                                        href="#pantilt"
-                                        data-action="up"
-                                    >
-                                    </a>
-                                    <div
-                                        class="pantilt_image pantilt-blank-top-right"
-                                    ></div>
-                                </div>
-                                <div class="row">
-                                    <a
-                                        id="pantilt-button-left"
-                                        class="pantilt-left pantilt_image adjust_pantilt"
-                                        href="#pantilt"
-                                        data-action="left"
-                                    >
-                                    </a>
-                                    <span class="pantilt_image">&nbsp;</span>
-                                    <a
-                                        id="pantilt-button-right"
-                                        class="pantilt-right pantilt_image adjust_pantilt"
-                                        href="#pantilt"
-                                        data-action="right"
-                                    >
-                                    </a>
-                                </div>
-                                <div class="row">
-                                    <div
-                                        class="pantilt_image pantilt-blank-bottom-left"
-                                    ></div>
-                                    <a
-                                        id="pantilt-button-down"
-                                        class="pantilt-down pantilt_image adjust_pantilt"
-                                        href="#pantilt"
-                                        data-action="down"
-                                    >
-                                    </a>
-                                    <div
-                                        class="pantilt_image pantilt-blank-bottom-right"
-                                    ></div>
                                 </div>
                             </div>
                         </fieldset>
