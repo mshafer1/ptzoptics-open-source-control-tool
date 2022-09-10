@@ -20,11 +20,21 @@ var config = defaults;
 config.ip = camera_ip;
 
 function get_config () {
-	var result = localStorage.getItem('configStorage1');
+  var result = localStorage.getItem('configStorage1');
   if (!result) {
-    return config;
+    return defaults;
   } else {
-  	return JSON.parse(result);
+    var stored = JSON.parse(result);
+    var result = { ...defaults };
+    console.log("stored", stored);
+    console.log("result", result);
+    for (var i in stored) {
+      console.log("checking key", i);
+      if (result.hasOwnProperty(i)) {
+        result[i] = stored[i];
+      }
+    }
+    return result;
   }
 }
 
