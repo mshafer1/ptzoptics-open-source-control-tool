@@ -205,16 +205,12 @@ function adjust_setting (action) {
 					var loc = base_url + "/param.cgi?post_image_value&flip&1";
 					run_action(loc);
 					config.flip = 1;
-					save_config();
-					update_labels();
 					break;
 
 				case 1:
 					var loc = base_url + "/param.cgi?post_image_value&flip&0";
 					run_action(loc);
 					config.flip = 0;
-					save_config();
-					update_labels();
 					break;
 			}
 			break;
@@ -225,16 +221,12 @@ function adjust_setting (action) {
 					var loc = base_url + "/param.cgi?post_image_value&mirror&1";
 					run_action(loc);
 					config.mirror = 1;
-					save_config();
-					update_labels();
 					break;
 
 				case 1:
 					var loc = base_url + "/param.cgi?post_image_value&mirror&0";
 					run_action(loc);
 					config.mirror = 0;
-					save_config();
-					update_labels();
 					break;
 			}
 			break;
@@ -244,14 +236,10 @@ function adjust_setting (action) {
 			switch (config.invertcontrols) {
 				case 0:
 					config.invertcontrols = 1;
-					save_config();
-					update_labels();
 					break;
 
 				case 1:
 					config.invertcontrols = 0;
-					save_config();
-					update_labels();
 					break;
 			}
 			break;
@@ -263,16 +251,12 @@ function adjust_setting (action) {
 					config.infinitypt = 1;
 					$('#pt_infinity').show();
 					config.infinitypt = 1;
-					save_config();
-					update_labels();
 					break;
 
 				case 1:
 					config.infinitypt = 0;
 					$('#pt_infinity').hide();
 					config.infinitypt = 0;
-					save_config();
-					update_labels();
 					break;
 			}
 			break;
@@ -286,8 +270,6 @@ function adjust_setting (action) {
 					$('#cam_zoom_infinity').show();
 					$('#cam_zoom_standard').hide();
 					config.infinityzoom = 1;
-					save_config();
-					update_labels();
 					break;
 
 				case 1:
@@ -295,8 +277,6 @@ function adjust_setting (action) {
 					$('#cam_zoom_infinity').hide();
 					$('#cam_zoom_standard').show();
 					config.infinityzoom = 0;
-					save_config();
-					update_labels();
 					break;
 			}
 			break;
@@ -309,8 +289,6 @@ function adjust_setting (action) {
 					$('#cam_focus_infinity').show();
 					$('#cam_focus_standard').hide();
 					config.infinityfocus = 1;
-					save_config();
-					update_labels();
 					break;
 
 				case 1:
@@ -318,12 +296,12 @@ function adjust_setting (action) {
 					$('#cam_focus_infinity').hide();
 					$('#cam_focus_standard').show();
 					config.infinityfocus = 0;
-					save_config();
-					update_labels();
 					break;
 			}
 			break;
 	}
+	save_config();
+	update_labels();
 }
 
 // used for loading existing settings
