@@ -15,6 +15,7 @@ var defaults = {
     tiltspeed: 8,
     focusspeed: 3,
     autopaninterval: 60,
+	  showautopan: true,
 };
 var config = defaults;
 config.ip = camera_ip;
@@ -84,8 +85,7 @@ function config_init () {
 	$("#tiltspeed").val(config.tiltspeed);
 	$("#focusspeed").val(config.focusspeed);
 	$("#autopaninterval").val(config.autopaninterval);
-
-	// save_config();
+	$("#showautopan").prop("checked", config.showautopan);
 
 	if (config.infinitypt == 1) {
 		$('#pt_infinity').show();
@@ -107,6 +107,12 @@ function config_init () {
 	} else {
 		$('#cam_focus_infinity').hide();
 		$('#cam_focus_standard').show();
+	}
+
+	if (config.showautopan) {
+		$('#autopan').show();
+	} else {
+		$('#autopan').hide();
 	}
 
 	update_labels();
@@ -299,6 +305,21 @@ function adjust_setting (action) {
 					break;
 			}
 			break;
+		case 'showautopan':
+			console.log("Handling autopan, current value: ", config.showautopan)
+			switch (config.showautopan) {
+				case true:
+						// hide it
+						config.showautopan=false;
+						$('#autopan').hide();
+					break
+					case false:
+						// show it
+						config.showautopan=true;
+						$('#autopan').show();
+					break
+			}
+			break
 	}
 	save_config();
 	update_labels();
@@ -569,6 +590,14 @@ $('body').on('click', '.adjust_setting', function(e) {
 	adjust_setting(action);
 	return false;
 });
+
+$('body').on('input', '.change_setting', function(e) {
+	e.preventDefault();
+	var action = $(this).data('action');
+	stop_autopan();
+	adjust_setting(action);
+	return false;
+})
 
 $('body').on('change', 'select.change_setting', function(e) {
 	e.preventDefault();
