@@ -60,12 +60,28 @@ function run_action(action_url) {
         });
 }
 
+function run_action_post(action_url) {
+    $.post(action_url, {
+        "cururl": `http://${camera_ip}/sysconfig.html`,
+    })
+        .done(function () {
+            console.log("success");
+        })
+        .fail(function (jqXHR, responseText, errorThrown) {
+            // console.log("error", responseText, errorThrown);
+        })
+        .always(function () {
+            console.log("complete");
+        });
+}
+
 // setup all the initial configuration and standard settings
 function config_init() {
     config = get_config();
     console.log(config);
 
     // set the initial IP value for the camera ip input
+    camera_ip = config.ip;
     $("#cam_ip").val(config.ip);
     base_url = "http://" + config.ip + "/cgi-bin";
 
@@ -195,6 +211,11 @@ function reload_cam() {
     } else {
         alert("IP address entered is invalid! Re-enter camera IP address.");
     }
+}
+
+function do_reboot() {
+    var loc = base_url + "/param.cgi?post_reboot";
+    run_action_post(loc);
 }
 
 function adjust_setting(action) {
@@ -680,6 +701,12 @@ $("body").on("click", ".assign_preset", function (e) {
 $("body").on("click", ".reload_cam", function (e) {
     e.preventDefault();
     reload_cam();
+    return false;
+});
+
+$("body").on("click", ".do_reboot", function (e) {
+    e.preventDefault();
+    do_reboot();
     return false;
 });
 
